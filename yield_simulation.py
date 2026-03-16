@@ -7,7 +7,7 @@ This script loads production data from an Excel file and calculates
 yield metrics across multiple dimensions.  Yields are defined as the
 ratio of good quantity to total production quantity.  The data
 originates from a sheet named ``생산실적현황`` in the workbook
-``공정기술팀 대시보드_260308.xlsx`` (included alongside this script).
+``공정기술팀 대시보드(수율).xlsx`` (included alongside this script).
 
 The dataset contains records for three plants (A관(1공장), C관(2공장),
 S관(3공장)) and five manufacturing processes:
@@ -441,7 +441,7 @@ def main() -> None:
             unsafe_allow_html=True,
         )
         # Update the main title to reflect the new dashboard name
-        st.title("공정별 개시보드")
+        st.title("공정별 대시보드")
 
         # ------------------------------------------------------------------
         # Data filtering based on sidebar selections
