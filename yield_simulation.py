@@ -1191,7 +1191,7 @@ def main() -> None:
                     '양품량': total_good,
                     'A관': plant_yields['A관(1공장)'],
                     'C관': plant_yields['C관(2공장)'],
-                    'S관': 정수'),
+                    'S관': plant_yields['S관(3공장)'],
                     '종합수율': overall,
                 })
             weekly_combined = pd.DataFrame(weekly_records)
