@@ -625,17 +625,6 @@ def main() -> None:
             run_defect_dashboard()
             return
 
-        # Allow the user to set the y-axis range for all yield charts.  This
-        # slider appears only on the yield dashboard and lets users zoom into
-        # specific yield ranges.  Defaults to 50–100.
-        y_min, y_max = st.slider(
-            "수율 Y축 범위 (%)",
-            min_value=0.0,
-            max_value=100.0,
-            value=(50.0, 100.0),
-            step=1.0,
-        )
-
         # ------------------------------------------------------------------
         # Summary cards (KPI panels)
         # ------------------------------------------------------------------
