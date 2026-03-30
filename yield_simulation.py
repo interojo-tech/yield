@@ -442,7 +442,7 @@ def main() -> None:
         # ------------------------------------------------------------------
         # Include an "전체 공장" option so users can view all plants together.
         # Prepend the option to the sorted list of actual plant names.
-        plants = ["전체 공장"] + sorted(df["공장"].unique().tolist())
+        plants = ["전체 공장"] + sorted(df["공장"].dropna().astype(str).unique().tolist())
         selected_plant = st.sidebar.radio(
             "공장 선택",
             options=plants,
@@ -467,7 +467,7 @@ def main() -> None:
             weeks = [f"W{w}" for w in _week_nums]
         except Exception:
             weeks = []
-        processes = sorted(df["Process"].dropna().unique().tolist())
+        processes = sorted(df["Process"].dropna().astype(str).unique().tolist())
         year_options = ["전체"] + [str(y) for y in years]
         month_options = ["전체"] + months
         week_options = ["전체"] + weeks
@@ -1191,7 +1191,7 @@ def main() -> None:
                     '양품량': total_good,
                     'A관': plant_yields['A관(1공장)'],
                     'C관': plant_yields['C관(2공장)'],
-                    'S관': plant_yields['S관(3공장)'],
+                    'S관': 정수'),
                     '종합수율': overall,
                 })
             weekly_combined = pd.DataFrame(weekly_records)
